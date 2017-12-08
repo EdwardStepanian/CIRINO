@@ -3,7 +3,7 @@ var bcrypt = require('bcrypt');
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
-    password : '',
+    password : 'ed',
     database : 'cirinoapp',
     insecureAuth: false
 });
@@ -31,7 +31,7 @@ exports.register = function(req,res){
         "created":today,
         "modified":today
     }
-    connection.query('INSERT INTO collegeusers SET ?',users, function (error, results, fields) {
+    connection.query('INSERT INTO cirinousers SET ?',users, function (error, results, fields) {
         if (error) {
             console.log("error ocurred",error);
             res.send({
@@ -52,7 +52,7 @@ exports.login = function(req,res){
     var userid= req.body.userid;
     var password = req.body.password;
     var role = req.body.role;
-    connection.query('SELECT * FROM collegeusers WHERE userid = ?',[userid], function (error, results, fields) {
+    connection.query('SELECT * FROM cirinousers WHERE userid = ?',[userid], function (error, results, fields) {
         if (error) {
             console.log("error ocurred",error);
             res.send({
@@ -61,6 +61,7 @@ exports.login = function(req,res){
             })
         }else{
             if(results.length >0){
+                console.log(results);
                 if(results[0].password == req.body.password){
                     if(results[0].role == req.body.role){
                         res.send({
@@ -77,6 +78,7 @@ exports.login = function(req,res){
 
                 }
                 else{
+                    console.log(results)
                     res.send({
                         "code":204,
                         "success":"Email and password does not match"
