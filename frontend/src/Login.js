@@ -17,8 +17,8 @@ class Login extends Component {
       <MuiThemeProvider>
         <div>
          <TextField
-           hintText="Enter your College Rollno"
-           floatingLabelText="Student Id"
+           hintText="Enter your Cirino Rollno"
+           floatingLabelText="Cashier Id"
            onChange = {(event,newValue) => this.setState({username:newValue})}
            />
          <br/>
@@ -44,15 +44,15 @@ class Login extends Component {
   componentWillMount(){
   // console.log("willmount prop values",this.props);
   if(this.props.role != undefined){
-    if(this.props.role == 'student'){
-      console.log("in student componentWillMount");
+    if(this.props.role == 'cash'){
+      console.log("in  componentWillMount");
       var localloginComponent=[];
       localloginComponent.push(
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
-             floatingLabelText="Student Id"
+             hintText="Enter your Cirino Rollno"
+             floatingLabelText="Cashier Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -76,7 +76,7 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
+             hintText="Enter your Ciriono Rollno"
              floatingLabelText="Administrator Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
@@ -135,7 +135,7 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
+             hintText="Enter your Cirino Rollno"
              floatingLabelText="Cashier Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
@@ -159,7 +159,7 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your College Rollno"
+             hintText="Enter your Cirino Rollno"
              floatingLabelText="Administrator Id"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
