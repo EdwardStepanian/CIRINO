@@ -1,0 +1,10 @@
+### Idea ###
+.idea/
+
+
+### Node ###
+# Logs
+logs
+*.log
+
+node_modules
